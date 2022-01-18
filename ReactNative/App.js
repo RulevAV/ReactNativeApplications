@@ -26,10 +26,12 @@ setListOfItems((list)=>{
 });
   }
   return (
-    <View style={styles.container}>
-    <Header/>
+    <View style={styles.main}>
+      <View  style={styles.header}>
+      <Header/>
     <Form addHeadler={addHeadler}/>
-      <View>
+      </View>
+      <View  style={styles.content}>
           <FlatList data={listOfItems} renderItem={({item})=>(
             <ListItem el={item} deleteHeandler={deleteHeandler}/>
           )}/>
@@ -38,5 +40,16 @@ setListOfItems((list)=>{
   );
 }
 const styles = StyleSheet.create({
-  
+  main:{
+    flex:1,
+    backgroundColor:"yellow"
+  },
+  header:{
+    flex:1,
+  },
+  content:{
+    flex:3,
+  }
+
 });
+
